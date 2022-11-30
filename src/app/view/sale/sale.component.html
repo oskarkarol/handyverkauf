@@ -1,0 +1,92 @@
+<!-- Header -->
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Electronics Store</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Content -->
+<ion-content *ngIf="variant">
+
+  <ion-card-header class="ion-text-center">
+    <ion-header>Unser Preisvorschlag:</ion-header>
+    <ion-card-subtitle>{{variant.name}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <div class="square-box">
+    <div class="image-wrapper">
+      <img src="https://d97x0nm99j1yz.cloudfront.net/images/grading/iphone/celebration.rev-69f423cc1bc1353.svg">
+    </div>
+    <div class="text-wrapper">
+      <ion-card-title class="price">{{variant.preis | currency:'EUR':'symbol':'1.0-0'}}</ion-card-title>
+    </div>
+  </div>
+
+  <form>
+    <!-- Anrede -->
+    <ion-item>
+      <ion-select placeholder="Anrede">
+        <ion-select-option value="one">Herr</ion-select-option>
+        <ion-select-option value="two">Frau</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Vorname -->
+    <ion-item>
+      <ion-input placeholder="Vorname"></ion-input>
+    </ion-item>
+
+    <!-- Nachname -->
+    <ion-item>
+      <ion-input placeholder="Nachname"></ion-input>
+    </ion-item>
+
+    <!-- E-Mail -->
+    <ion-item>
+      <ion-input placeholder="E-Mail"></ion-input>
+    </ion-item>
+
+    <!-- Telefon -->
+    <ion-item>
+      <ion-input placeholder="Handynummer"></ion-input>
+    </ion-item>
+
+    <!-- Abgabeort -->
+    <ion-item>
+      <ion-select placeholder="Abgabeort">
+        <ion-select-option value="one">Mannheim</ion-select-option>
+        <ion-select-option value="two">Karlsruhe</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- AGB -->
+    <ion-item>
+      <ion-checkbox></ion-checkbox>
+      <ion-label class="ion-text-wrap ion-margin-start"><small>Ich habe die AGB & allgem. Verbraucherinformationen und die
+        Datenschutzbestimmungen gelesen und erkläre mich damit einverstanden.</small>
+      </ion-label>
+    </ion-item>
+
+    <!-- Privatverkauf -->
+    <ion-item>
+      <ion-checkbox></ion-checkbox>
+      <ion-label class="ion-text-wrap ion-margin-start"><small>Ich versichere, dass die von mir angebotenen Waren von mir ausschließlich für den
+        privaten Gebrauch erworben worden sind und für die Geräte keine Vorsteuerabzugsberechtigung bestand oder
+        besteht. Dementsprechend ist hierfür ein Vorsteuerabzug der Umsatzsteuer beim Finanzamt nicht geltend gemacht
+        worden.</small>
+      </ion-label>
+    </ion-item>
+
+    <!-- Ionic Button -->
+    <ion-button expand="block" [routerLink]="['/success']">
+      Jetzt verkaufen
+    </ion-button>
+
+  </form>
+</ion-content>
+
+<!-- Footer -->
+<ion-footer class="ion-text-center">
+  <ion-toolbar>electronics-store.de GmbH</ion-toolbar>
+</ion-footer>

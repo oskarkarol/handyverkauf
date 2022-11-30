@@ -1,0 +1,35 @@
+<!-- Header -->
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Electronics Store</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Content -->
+<ion-content class="ion-text-center" *ngIf="manufacturers.length">
+
+  <ion-card-header>
+    <ion-card-title>Was für ein Handy verkaufst du?</ion-card-title>
+  </ion-card-header>
+
+  <ion-grid class="page-content">
+    <ion-row>
+      <ion-col *ngFor="let manufacturer of manufacturers" size="6" [routerLink]="['/models', manufacturer.uuid]">
+        <div class="square-box">
+          <div class="image-wrapper">
+            <img [src]="baseurl + manufacturer.logo" />
+          </div>
+          <div class="text-wrapper">
+            <p>{{manufacturer.name}}</p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<!-- Footer -->
+<ion-footer class="ion-text-center">
+  <ion-toolbar>electronics-store.de GmbH</ion-toolbar>
+</ion-footer>

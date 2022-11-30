@@ -1,0 +1,43 @@
+<!-- Header -->
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Electronics Store</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Content -->
+<ion-content class="ion-text-center" *ngIf="variants.length">
+
+  <ion-card-header>
+    <ion-card-title>Was für eine Variante verkaufst du?</ion-card-title>
+  </ion-card-header>
+
+  <!--
+
+  <ion-grid class="page-content">
+    <ion-row>
+      <ion-col *ngFor="let variant of variants" size="6" [routerLink]="['/sale', this.manufacturerId, this.modelId, variant.uuid]">
+        <div class="square-box">
+          <div class="text-wrapper">
+            <p>{{variant.name}}</p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  -->
+
+  <ion-list>
+    <ion-item *ngFor="let variant of variants" [routerLink]="['/sale', this.manufacturerId, this.modelId, variant.uuid]">
+      {{variant.name}}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<!-- Footer -->
+<ion-footer class="ion-text-center">
+  <ion-toolbar>electronics-store.de GmbH</ion-toolbar>
+</ion-footer>
